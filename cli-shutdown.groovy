@@ -7,4 +7,4 @@ p.each { x ->
 }
 
 def j = Jenkins.instance;
-j.actions.each { x -> if (x.class.name.contains("CLIAction")) j.actions.remove(x) }
+j.actions.each { x -> if (x.getClass().name.contains("CLIAction")) j.actions.remove(x) }
