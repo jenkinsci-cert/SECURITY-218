@@ -33,7 +33,7 @@ p.each { x ->
 }
 
 // disable CLI access over /cli URL
-def removal(lst) {
+def removal = { lst ->
   lst.each { x -> if (x.getClass().name.contains("CLIAction")) lst.remove(x) }
 }
 def j = Jenkins.instance;
