@@ -26,16 +26,29 @@ import jenkins.*;
 import jenkins.model.*;
 import hudson.model.*;
 
-// disabled CLI access over TCP listener (separate port)
-def p = AgentProtocol.all()
-p.each { x ->
-  if (x.name.contains("CLI")) p.remove(x)
-}
+Thread.start {
+  for (int i=0; i<100; i++) {
+    Thread.sleep(1000);
 
-// disable CLI access over /cli URL
-def removal = { lst ->
-  lst.each { x -> if (x.getClass().name.contains("CLIAction")) lst.remove(x) }
+    // disabled CLI access over TCP listener (separate port)
+    def p = AgentProtocol.all()
+    p.each { x ->
+      if (x.name.contains("CLI")) {
+        p.remove(x)
+        println "[SECURITY-218] removed ${x.name}"
+      }
+    }
+
+    // disable CLI access over /cli URL
+    def j = Jenkins.instance;
+    [ j.getExtensionList(RootAction.class), j.actions ].each { lst ->
+      lst.each { x ->
+        if (x.getClass().name.contains("CLIAction")) {
+          lst.remove(x)
+          println "[SECURITY-218] removed CLIAction from ${lst.class}"
+        }
+      }
+    }
+    
+  }
 }
-def j = Jenkins.instance;
-removal(j.getExtensionList(RootAction.class))
-removal(j.actions)
