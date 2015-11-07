@@ -24,3 +24,7 @@ java.io.EOFException
 		at hudson.cli.CLI.<init>(CLI.java:132)
 		... 3 more
 ```
+
+# FAQ
+### How do I interpret the output from this script?
+It doesn't mean anything useful. So please ignore the output. See above for how to verify that the mitigation took place. To be safe, please also perform the verification again if you restart Jenkins.
