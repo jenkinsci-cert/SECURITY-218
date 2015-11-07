@@ -3,7 +3,9 @@ import jenkins.model.*;
 
 def p = AgentProtocol.all()
 p.each { x ->
-  if (x.name.contains("CLI")) p.remove(x)
+  if ([ 'CLI-connect', 'CLI2-connect' ].contains(x.name)) {
+    p.remove(x)
+  }
 }
 
 def j = Jenkins.instance;
