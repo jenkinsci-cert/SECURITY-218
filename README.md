@@ -1,6 +1,10 @@
 # Mitigation for SECURITY-218
 
-Until a proper fix is developed, [this script](cli-shutdown.groovy) can be used to shut down CLI subsystem of Jenkins to protect Jenkins from a known vulnerability.
+> **Note**: With the release of Jenkins 1.638 and 1.625.2 on Nov 11 2015 this workaround is no longer necessary. We strongly recommend you update your Jenkins instances whenever releases contain security fixes.
+
+---
+
+Until a proper fix was developed, [this script](cli-shutdown.groovy) could be used to shut down CLI subsystem of Jenkins to protect Jenkins from a known vulnerability.
 
 When run from the Groovy script console (`/script`), this shuts down CLI subsystem of a running Jenkins without needing a restart.
 
