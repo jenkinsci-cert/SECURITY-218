@@ -1,6 +1,6 @@
 # Mitigation for unauthenticated remote code execution via CLI
 
-> NOTE: This script was originally published in November 2015 to fix the **SECURITY-218** zero-day vulnerability. It can also be applied as a workaround for the SECURITY-360 zero-day vulnerability published in **November 2016**.
+> NOTE: This script was originally published in **November 2015** to fix the **SECURITY-218** zero-day vulnerability. It can also be applied as a workaround for the **SECURITY-360** zero-day vulnerability published in **November 2016**.
 
 [This script](cli-shutdown.groovy) could be used to shut down CLI subsystem of Jenkins to protect Jenkins from a known vulnerability.
 
