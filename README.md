@@ -1,10 +1,8 @@
-# Mitigation for SECURITY-218
+# Mitigation for unauthenticated remote code execution via CLI
 
-> **Note**: With the release of Jenkins 1.638 and 1.625.2 on Nov 11 2015 this workaround is no longer necessary. We strongly recommend you update your Jenkins instances whenever releases contain security fixes.
+> NOTE: This script was originally published in November 2015 to fix the **SECURITY-218** zero-day vulnerability. It can also be applied as a workaround for the SECURITY-360 zero-day vulnerability published in **November 2016**.
 
----
-
-Until a proper fix was developed, [this script](cli-shutdown.groovy) could be used to shut down CLI subsystem of Jenkins to protect Jenkins from a known vulnerability.
+[This script](cli-shutdown.groovy) could be used to shut down CLI subsystem of Jenkins to protect Jenkins from a known vulnerability.
 
 When run from the Groovy script console (`/script`), this shuts down CLI subsystem of a running Jenkins without needing a restart.
 
@@ -35,3 +33,8 @@ It doesn't mean anything useful. So please ignore the output. See above for how 
 
 ### Does this affect the REST API?
 No.
+
+### What vulnerability is this a fix for?
+Originally this was developed in November 2015 as a workaround for the SECURITY-218 zero-day remote code execution vulnerability. Releases with a fix were published on November 11, 2015.
+
+On November 11, 2016, another zero-day remote code execution vulnerability (SECURITY-360) used a similar technique, and this workaround was effective here as well.
