@@ -1,3 +1,14 @@
+**This mitigation is obsolete as of Jenkins 2.54.**
+If you have installed a 2.54+ version of Jenkins anew, the Remoting-based CLI is disabled out of the box.
+If you installed an older version of Jenkins and upgraded to 2.54+,
+you will be prompted by an administrative monitor
+to go to **Configure Global Security** and disable the Remoting-based CLI.
+In either case, the following workarounds are unnecessary.
+
+Or, if you are using Jenkins 2.32+ or 2.19.3+
+(as mentioned in the [security advisory of 2016 Nov 16](https://jenkins.io/security/advisory/2016-11-16/)),
+but older than 2.54, you may simply use the startup switch: `-Djenkins.CLI.disabled=true`
+
 # Mitigation for unauthenticated remote code execution via CLI
 
 > NOTE: This script was originally published in **November 2015** to fix the **SECURITY-218** zero-day vulnerability. It can also be applied as a workaround for the **SECURITY-360** zero-day vulnerability published in **November 2016**.
