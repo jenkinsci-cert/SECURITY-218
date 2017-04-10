@@ -29,7 +29,9 @@ import hudson.model.*;
 // disabled CLI access over TCP listener (separate port)
 def p = AgentProtocol.all()
 p.each { x ->
-  if (x.name.contains("CLI")) p.remove(x)
+  if ([ 'CLI-connect', 'CLI2-connect' ].contains(x.name)) {
+    p.remove(x)
+  }
 }
 
 // disable CLI access over /cli URL
