@@ -1,6 +1,6 @@
-**This mitigation is obsolete as of Jenkins 2.54.**
-If you have installed a 2.54+ version of Jenkins anew, the Remoting-based CLI is disabled out of the box.
-If you installed an older version of Jenkins and upgraded to 2.54+,
+**This mitigation is obsolete as of Jenkins 2.54 and Jenkins LTS 2.46.2.**
+If you have installed a 2.54+/LTS 2.46.2+ version of Jenkins anew, the Remoting-based CLI is disabled out of the box.
+If you installed an older version of Jenkins and upgraded to 2.54+ or LTS 2.46.2+,
 you will be prompted by an administrative monitor
 to go to **Configure Global Security** and disable the Remoting-based CLI.
 In either case, the following workarounds are unnecessary.
